@@ -24,16 +24,15 @@
             <div class="login-form">
                 <form>
                     <div class="form-group padding1">
-                        <label>ID Number</label>
+                        <label>University ID</label>
                         <input type="text" class="form-control" placeholder="User Name">
                     </div>
                     <div class="form-group padding1">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <label>Useremail</label>
+                        <input type="email" class="form-control" placeholder="E-mail">
                     </div>
                     <div class="padding1">
-                        <button type="submit" class="btn btn-black ">Login</button>
-                        <button type="submit" class="btn btn-secondary">Forget Password</button>
+                        <button type="submit" class="btn btn-black ">Send Request</button>
                     </div>
                 </form>
             </div>
