@@ -8,15 +8,15 @@
 
     @include('Assets.links')
 
-    <title>Student Management System</title>
+    <title>Class Management System</title>
 </head>
 
 <body>
 
     <div class="sidenav">
         <div class="login-main-text">
-            <h2>Class Management System<br> Login Page</h2>
-            <p>Login or register from here to access.</p>
+            <h2>Class Management System<br>Forget Password</h2>
+            <p>Forget Password</p>
         </div>
     </div>
     <div class="main">

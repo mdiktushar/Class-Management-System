@@ -8,7 +8,7 @@
 
     @include('Assets.links')
 
-    <title>Student Management System</title>
+    <title>Class Management System</title>
 </head>
 
 <body>

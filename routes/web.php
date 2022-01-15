@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// import Controllers
+use App\Http\Controllers\Web;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about', function () {
-    return View::make('about');
-});
+// Public Routs for starting pages
+Route::get('/', [Web::class, 'indexPage']);
+Route::get('/forget-password', [Web::class, 'forgetPasswordPage']);
+Route::get('/about', [Web::class, 'aboutPage']);
