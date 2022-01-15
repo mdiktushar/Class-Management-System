@@ -20,3 +20,4 @@ use App\Http\Controllers\Web;
 Route::get('/', [Web::class, 'indexPage']);
 Route::get('/forget-password', [Web::class, 'forgetPasswordPage']);
 Route::get('/about', [Web::class, 'aboutPage']);
+Route::post('/user', [Web::class, 'login']);

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Models
+use App\Models\User;
+
 class Web extends Controller
 {
     //
@@ -23,5 +26,18 @@ class Web extends Controller
     {
         # return about page
         return view('about');
+    }
+
+    public function login(Request $req)
+    {
+        # login buttun
+        $user = User::where('id_number', $req->id)->first();
+        if (!$user || ($req->password != $user->password)) {
+            return 'null';
+        }
+        if ($user->user_type == 1) {
+            return view('teacher.dashboard');
+        }
+        return view('student.dashboard');
     }
 }

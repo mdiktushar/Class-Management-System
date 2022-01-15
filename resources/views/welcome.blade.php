@@ -22,14 +22,15 @@
     <div class="main">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
-                <form>
+                <form action='user' method="POST">
+                    @csrf
                     <div class="form-group padding1">
                         <label>ID Number</label>
-                        <input type="text" class="form-control" placeholder="User Name">
+                        <input type="text" name="id" class="form-control" placeholder="User Name">
                     </div>
                     <div class="form-group padding1">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="padding1">
                         <button type="submit" class="btn btn-black ">Login</button>
