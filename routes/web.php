@@ -18,6 +18,7 @@ use App\Http\Controllers\Web;
 
 // Public Routs for starting pages
 Route::get('/', [Web::class, 'indexPage']);
-Route::get('/forget-password', [Web::class, 'forgetPasswordPage']);
+Route::post('/forget-password', [Web::class, 'forgetPasswordPage']);
 Route::get('/about', [Web::class, 'aboutPage']);
 Route::post('/user', [Web::class, 'login']);
+Route::post('/reset-password', [Web::class, 'resetPassword']);

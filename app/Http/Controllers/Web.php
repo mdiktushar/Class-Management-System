@@ -16,10 +16,16 @@ class Web extends Controller
         return View::make('welcome');
     }
 
-    public function forgetPasswordPage(Type $var = null)
+    public function forgetPasswordPage(Request $req)
     {
-        # return forget page
-        return view('forgetPassword');
+        $user = User::where('id_number', $req->id)->first();
+        if ($user) {
+            $data = $user->only('name', 'secret_question', 'id_number');
+            return view('forgetPassword', compact('data'));
+            // return gettype($data);
+            // return $req;
+        }
+        return redirect('/')->with('message', 'User Not Found..!');
     }
 
     public function aboutPage(Type $var = null)
@@ -32,12 +38,24 @@ class Web extends Controller
     {
         # login buttun
         $user = User::where('id_number', $req->id)->first();
-        if (!$user || ($req->password != $user->password)) {
+        if (!$user && ($req->password != $user->password)) {
             return 'null';
         }
         if ($user->user_type == 1) {
             return view('teacher.dashboard');
         }
         return view('student.dashboard');
+    }
+
+    public function resetPassword(Request $req)
+    {
+        # reseting password
+        $user = User::where('id_number', $req->id)->first();
+        if ($user && ($user->secret_que_ans == $req->answer) && ($req->password == $req->config_password)) {
+            $user->password = $req->password;
+            $user->save();
+            return redirect('/')->with('message', 'Password Updated');
+        }
+        return redirect('/')->with('message', 'Password Not Updated');
     }
 }

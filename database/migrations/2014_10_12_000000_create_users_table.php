@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $teble->string('secret_question');
+            $table->string('secret_que_ans');
         });
     }
 
