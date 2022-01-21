@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\User;
+use App\Models\Student;
 
 class Web extends Controller
 {
@@ -19,8 +20,10 @@ class Web extends Controller
     public function forgetPasswordPage(Request $req)
     {
         $user = User::where('id_number', $req->id)->first();
+
         if ($user) {
             $data = $user->only('name', 'secret_question', 'id_number');
+            
             return view('forgetPassword', compact('data'));
             // return gettype($data);
             // return $req;
@@ -38,13 +41,14 @@ class Web extends Controller
     {
         # login buttun
         $user = User::where('id_number', $req->id)->first();
-        if (!$user && ($req->password != $user->password)) {
-            return 'null';
+        $data = Student::where('id_number', $req->id)->first();
+        if (!$user || ($req->password != $user->password)) {
+            return redirect('/')->with('message', 'Please Enter Valide User ID and Password');
         }
         if ($user->user_type == 1) {
-            return view('teacher.dashboard');
+            return view('teacher.dashboard', compact('user'));
         }
-        return view('student.dashboard');
+        return view('student.dashboard', compact('user', 'data'));
     }
 
     public function resetPassword(Request $req)

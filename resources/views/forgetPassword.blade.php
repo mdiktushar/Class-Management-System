@@ -48,7 +48,8 @@
                             placeholder="Reenter New Password" required>
                     </div>
                     <div class="padding1">
-                        <button type="submit" class="btn btn-black ">Reset Password</button>
+                        <button type="submit" style="color: rgb(228, 228, 228);" class="btn btn-black ">Reset
+                            Password</button>
                     </div>
                 </form>
 

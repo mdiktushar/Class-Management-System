@@ -1,8 +1,10 @@
+
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
   }
-  
+
+/* sidebar */ 
   .sidebar {
     margin: 0;
     padding: 0;
@@ -52,3 +54,5 @@ body {
       float: none;
     }
   }
+
+  /* end sidebar */

@@ -38,7 +38,8 @@
                             <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="padding1">
-                            <button type="submit" class="btn btn-black ">Login</button>
+                            <button style="color: rgb(228, 228, 228);" type="submit"
+                                class="btn btn-black ">Login</button>
                         </div>
                     </form>
                     <br>
@@ -54,7 +55,7 @@
                             <input type="text" name="id" class="form-control" placeholder="User ID" required>
                         </div>
                         <div class="padding1">
-                            <button type="submit" class="btn btn-black ">Go</button>
+                            <button type="submit" style="color: rgb(228, 228, 228);" class="btn btn-black ">Go</button>
                         </div>
                     </form>
                     <br>

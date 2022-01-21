@@ -60,7 +60,7 @@ body {
 .login-main-text {
     margin-top: 20%;
     padding: 60px;
-    color: #fff;
+    color: rgb(228, 228, 228);
 }
 
 .login-main-text h2 {
@@ -74,4 +74,10 @@ body {
 
 .padding1 {
     padding-top: 5px;
+}
+
+
+/* Profile */
+.profile_context {
+    text-align: center;
 }
