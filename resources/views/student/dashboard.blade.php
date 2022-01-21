@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @include('Assets.links')
-    <!-- <link rel="stylesheet" href="Assets/css/style-2.css"> -->
     <title>Class Management System</title>
 </head>
 
@@ -17,6 +16,10 @@
         <div class="container profile_context">
             <img src="https://st1.bollywoodlife.com/data/topics/image/7/17237/27c829ce467384376cc8168f196df30d_225X300_1.jpg"
                 alt="profile image" width="150" height="200">
+            <br>
+            <br>
+            <a href="{{route('student.editProfile',['id' => $data->id_number])}}" class="btn btn-success">Edit
+                Profile</a>
             <br>
             <br>
             Name: {{$user->name}} <p></p>
