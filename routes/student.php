@@ -15,8 +15,5 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/editProfile/{id}', [StudentController::class, 'editProfile'])->name('student.editProfile');
+Route::get('/saveChangeStudent', [StudentController::class, 'saveChange']);

@@ -19,4 +19,22 @@ class StudentController extends Controller
 
         return view('/student/updateProfile', compact('data1', 'data2'));
     }
+
+    public function saveChange(Request $req)
+    {
+        # code...
+        // return $req;
+        $data = Student::where('id_number', $req->id)->first();
+        $user = user::where('id_number', $req->id)->first();
+        
+        $data->department = $req->department;
+        $data->father = $req->father;
+        $data->mother = $req->mother;
+        $data->sex = $req->sex;
+        $data->address = $req->address;
+        $data->mobile = $req->mobile;
+        $data->save();
+
+        return view('student.dashboard', compact('data', 'user'));
+    }
 }
