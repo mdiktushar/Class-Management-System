@@ -19,8 +19,11 @@
                 alt="profile image" width="150" height="200">
             <br>
             <br>
-            <a href="{{route('student.editProfile',['id' => $data->id_number])}}" class="btn btn-success">Edit
-                Profile</a>
+            <a href="{{route('student.editProfile',['id' => $data->id_number])}}" class="btn btn-success">
+                Edit Profile</a>
+            <div style="padding: 15px"></div>
+            <a href="{{route('student.changePassword',['id' => $data->id_number])}}" class="btn btn-secondary">
+                Change Password</a>
             <br>
             <br>
             Name: {{$user->name}} <p></p>

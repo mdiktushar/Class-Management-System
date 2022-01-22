@@ -15,6 +15,7 @@
     <div class="content">
         <!-- Body Cods will be hear -->
         <form action="/saveChangeStudent" method="get" style="padding-top: 7%">
+            @csrf
             <input type="text" name="name" placeholder="Name" value={{$data2->name}}><br><br>
             <input type="text" name="id" placeholder="ID" value={{$data1->id_number}} readonly><br><br>
             <input type="text" name="department" placeholder="Department" value={{$data1->department}}><br><br>

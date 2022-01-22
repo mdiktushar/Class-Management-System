@@ -24,7 +24,7 @@
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 @if(session('message'))
-                <div class="alert alert-success">{{session('message')}}</div>
+                <div class="alert alert-danger">{{session('message')}}</div>
                 @endif
                 <div id="login-form">
                     <form action='user' method="POST">

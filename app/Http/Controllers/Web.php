@@ -62,4 +62,16 @@ class Web extends Controller
         }
         return redirect('/')->with('message', 'Password Not Updated');
     }
+
+    public function updatePassword(Request $req)
+    {
+        $data = User::where('id_number', $req->id)->first();
+
+        if ($req->new_password == $req->password_conferm && $data->password == $req->current_password) {
+            $data->password = $req->new_password;
+            $data->save();
+            return redirect()->back()->with('message1', 'password changed');
+        }
+        return redirect()->back()->with('message2', 'password not changed');
+    }
 }
